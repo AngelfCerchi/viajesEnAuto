@@ -1,0 +1,25 @@
+import clientes.*
+import remiseras.*
+import oficina.*
+
+
+test "Primera opcion Roxana segunda Opcion Juana lleva anaMaria 10km"{
+	oficina.asignarRemiseras(roxana,juana)
+	assert.equals(200,juana.precioPorViaje(anaMaria,10))
+	assert.equals(300,roxana.precioPorViaje(anaMaria,10))
+	assert.equals(juana,oficina.remiseraElegidaParaViaje(anaMaria,10))
+}
+
+test "Primera opcion Roxana segunda Opcion Juana lleva teresa 10km"{
+	oficina.asignarRemiseras(roxana,juana)
+	assert.equals(220,roxana.precioPorViaje(teresa,10))
+	assert.equals(200,juana.precioPorViaje(teresa,10))
+	assert.equals(roxana,oficina.remiseraElegidaParaViaje(teresa,10))
+}
+
+test "Primera opcion Roxana segunda Opcion Juana lleva teresa 4km"{
+	oficina.asignarRemiseras(roxana,juana)
+	assert.equals(88,roxana.precioPorViaje(teresa,4))
+	assert.equals(100,juana.precioPorViaje(teresa,4))
+	assert.equals(roxana,oficina.remiseraElegidaParaViaje(teresa,10))
+}
