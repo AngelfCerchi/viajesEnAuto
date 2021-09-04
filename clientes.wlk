@@ -14,8 +14,12 @@ Teresa: arranca en 22 pesos el kilómetro, puede cambiar a cualquier otro valor.
  	var estado = true // esta estable -> 30pesos el km  // false esta inestable -> 25 el km
  	var precio
  	
- 	method estaEstable(){ return estado	}
- 	method cambiarEstado(){ if(self.estaEstable()){ estado = false} }
+ 	method estaEstable() = estado
+ 	method cambiarEstado(){
+ 		if(self.estaEstable()){
+ 			estado = false
+ 		}
+ 	}
  	method setPrecio(){
  		//setea el precio en base al estado de anaMaria
  		if (self.estaEstable()){
@@ -30,12 +34,12 @@ Teresa: arranca en 22 pesos el kilómetro, puede cambiar a cualquier otro valor.
 object teresa{
 	var precio = 22 // 22 pesos x km
 	method setPrecio(pesos){ precio = pesos	}
-	method getPrecio(){	return precio }
+	method getPrecio() = precio
 }
 
 object melina{
 	var trabajaPara = ludmila // por defecto
 	const precio = trabajaPara.getPrecio() - 3
 	method trabajaPara(cliente){ trabajaPara = cliente }
-	method getPrecio(){ return precio }
+	method getPrecio() = precio
 }

@@ -10,11 +10,11 @@ son más de 8 kilómetros. A Juana no le importa lo que pactó la agencia, le co
 import clientes.*
 
 object roxana{ 
-	method precioPorViaje(cliente,km){ return cliente.getPrecio()*km }
+	method precioPorViaje(cliente,km) = cliente.getPrecio()*km 
 }
 
 object gabriela{ 
-	method precioPorViaje(cliente,km){ return ((cliente.getPrecio()*km) *1.2)}
+	method precioPorViaje(cliente,km) = ((cliente.getPrecio()*km) *1.2)
 }
 
 object mariela{
@@ -44,6 +44,6 @@ object juana{
 object lucia{
 	var reemplazaA = mariela // por defecto reemplaza a mariela
 	method reemplazaA(remisera){ reemplazaA = remisera }
-	method getReemplazaA(){	return reemplazaA }
-	method precioPorViaje(cliente,km){ return self.getReemplazaA().precioPorViaje(cliente,km)	}
+	method getReemplazaA()	= reemplazaA 
+	method precioPorViaje(cliente,km) =  self.getReemplazaA().precioPorViaje(cliente,km)
 }

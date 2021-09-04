@@ -20,7 +20,7 @@ object oficina{
  	method cambiarPrimeraRemiseraPor(remisera){ remiseraPrimeraOpcion = remisera }
  	method cambiarSegundaRemiseraPor(remisera){ remiseraSegundaOpcion = remisera}
  	
- 	method intecambiarRemiseras(){ self.asignarRemiseras(remiseraSegundaOpcion,remiseraPrimeraOpcion)}
+ 	method intecambiarRemiseras(){ self.asignarRemiseras(remiseraSegundaOpcion,remiseraPrimeraOpcion) }
 
  	method diferenciaEntrePrecio(cliente,km){ return (remiseraSegundaOpcion.precioPorViaje(cliente,km) - remiseraPrimeraOpcion.precioPorViaje(cliente,km)).abs() }
  	
